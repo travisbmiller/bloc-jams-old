@@ -1,2 +1,25 @@
 // SASS for your album collection view
 
+.album-collection {
+  margin-top: 55px;
+}
+
+.col-md-2 {
+  margin-bottom: 15px;
+}
+
+.thumbnail {
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.album-name, .artist-name, .song {
+  color: white;
+  @include font-open-sans(300);
+  margin-bottom: 0;
+}
+
+.artist-name, .song {
+  color: rgba(255, 255, 255, 0.6);
+}
