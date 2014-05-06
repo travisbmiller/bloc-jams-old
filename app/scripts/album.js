@@ -33,8 +33,17 @@ var albumMarconi = {
     ]
 };
 
+
 var createSongRow = function(songNumber, songName, songLength) {
-};
+    
+    var $newSongRow = $('<tr>');
+    $newSongRow.append('<td class="col-md-1">' + songNumber + '</td>');
+    $newSongRow.append('<td class="col-md-9">' + songName + '</td>');
+    $newSongRow.append('<td class="col-md-2">' + songLength + '</td>');
+
+    return $newSongRow;
+  };
+
 
 var changeAlbumView = function(album) {
   var $albumTitle = $('.album-title');
@@ -57,6 +66,7 @@ var changeAlbumView = function(album) {
     var $newRow = createSongRow(i, songData.name, songData.length);
     $songList.append($newRow);
   }
+}
 
 };
 
