@@ -13,11 +13,14 @@ block content
     .row
       .col-md-12
         table.table.album-song-listing
-          each colorName, index in ['Blue', 'Green', 'Red', 'Pink', 'Magenta']
-            tr
-              td
-                | #{index + 1}
-              td 
-                | #{colorName}
-              td
-                | X:XX
+        var createSongRow = function(songNumber, songName, songLength) {
+
+  var $newSongRow = $('<tr>');
+  $newSongRow.append('<td class="col-md-1">' + songNumber + '</td>');
+  $newSongRow.append('<td class="col-md-9">' + songName + '</td>');
+  $newSongRow.append('<td class="col-md-2">' + songLength + '</td>');
+
+  return $newSongRow;
+};
+            
+ 
