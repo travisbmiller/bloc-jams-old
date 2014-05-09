@@ -37,7 +37,7 @@ var albumMarconi = {
 var createSongRow = function(songNumber, songName, songLength) {
     
     var $newSongRow = $('<tr>');
-    $newSongRow.append('<td class="col-md-1">' + songNumber + '</td>');
+    $newSongRow.append('<td class="col-md-1" id="' + songNumber + '"' + '>' + songNumber + '</td>');
     $newSongRow.append('<td class="col-md-9">' + songName + '</td>');
     $newSongRow.append('<td class="col-md-2">' + songLength + '</td>');
 
@@ -64,7 +64,7 @@ var changeAlbumView = function(album) {
   var songs = album.songs;
     for (var i = 0; i < songs.length; i++) {
       var songData = songs[i];
-      var $newRow = createSongRow(i, songData.name, songData.length);
+      var $newRow = createSongRow(i+1, songData.name, songData.length);
       $songList.append($newRow);
     }
   }
@@ -89,17 +89,51 @@ if (document.URL.match(/\/album/)) {
 
       changeAlbumView(albums[albumIndex]);
     });
+  
+    $('tr').hover(
+        function() { 
+           if ( $(this).children('.col-md-1').text() !== "pause" ) {  
+              
+              $(this).children('.col-md-1').text("play");
+
+              $(this).children('.col-md-1').click(function() { 
+
+                if ( $('.playing').length > 0 ) {
+                  $('.playing').text( $('.playing').attr("id") );
+                  $('.playing').removeClass('playing');
+                
+                } else {
+                  $(this).addClass("playing");
+                  $(this).text("pause");
+                }
+              })
+            
+            } else {
+
+              $(this).children('.col-md-1').text("pause");
+
+              $(this).children('.col-md-1').click(function() { 
+
+                
+
+                  $(this).removeClass("playing");
+                  $(this).text("play");
+              })
+
+            }
+        }, 
+        function() {
+            if ( $(this).children('.col-md-1').text() !== "pause" ) {
+              $(this).children('.col-md-1').text( $(this).children('.col-md-1').attr("id"));
+            }
+        }
+
+       
+    );
+
+
   });
-
 }
-
-
-$('tr').hover(function() { 
-  $(this).children('.col-md-1').append("add - something"); 
-  } 
-);
-
-
 
 
 
