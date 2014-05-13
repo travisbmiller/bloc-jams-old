@@ -91,39 +91,30 @@ if (document.URL.match(/\/album/)) {
     });
   
     $('tr').hover(
-        function() { 
-           if ( $(this).children('.col-md-1').text() !== "pause" ) {  
-              
-              $(this).children('.col-md-1').text("play");
-
-              $(this).children('.col-md-1').click(function() { 
-
-                if ( $('.playing').length > 0 ) {
-                  $('.playing').text( $('.playing').attr("id") );
-                  $('.playing').removeClass('playing');
-                
-                } else {
-                  $(this).addClass("playing");
-                  $(this).text("pause");
-                }
-              })
-            
-            } else {
-
-              $(this).children('.col-md-1').text("pause");
-
-              $(this).children('.col-md-1').click(function() { 
-
-                
-
-                  $(this).removeClass("playing");
-                  $(this).text("play");
-              })
-
-            }
-        }, 
         function() {
-            if ( $(this).children('.col-md-1').text() !== "pause" ) {
+        if($(this).children('.col-md-1').text() !== 'Pause') { 
+          $(this).children('.col-md-1').text("play");
+        };
+
+        $(this).children('.col-md-1').click(function() {
+          if ($(this).hasClass('playing')) {
+            $(this).removeClass('playing');
+            $(this).text('Play');
+          } else {
+            // check if row with .playing exists and change back to song number
+            if ($('.playing')) {
+              var previousSongId = $('.playing').attr('id');
+              $('.playing').text(previousSongId);
+              $('.playing').removeClass('playing');
+            };
+
+            $(this).addClass('playing');
+            $(this).text('Pause');
+          };
+        });
+      },
+        function() {
+            if ( $(this).children('.col-md-1').text() !== "Pause" ) {
               $(this).children('.col-md-1').text( $(this).children('.col-md-1').attr("id"));
             }
         }
