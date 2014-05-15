@@ -2,49 +2,60 @@ extends layouts/player_layout
 
 block content
   .container
-    .col-md-2.personal
-      h1 Personal Information
-      .personal_thumbnail
-        img.thumbnail(src="/images/user-upload-placeholder.png")
-        button
-    .col-md-7.col-md-push-1
-      .pagination
-        p test
-      form
-        label(for="user_name") User Name
-        br 
-        input(type="text", id="user_name")
-        br
-        label(for="email") Email
-        br
-        input(type="email", id="email")
-        br
-        .cityStateContainer
-          .city
-            label(for="city") City
+    .row
+      .col-md-3.personal
+        .personal_thumbnail
+          h1 Personal Information
+          .img_container
+            img(src="/images/user-upload-placeholder.png") 
+            button.upload UPLOAD
+      .col-md-7
+        .text-center.account_subs
+            ul.pagination
+              li 
+                button YOUR ACCOUNT
+              li
+                button("disabled") SUBSCRIPTION
+            //- button YOUR ACCOUNT 
+            //- button SUBSCRIPTION
+        form(role="form")
+          .form-group
+            label(for="user_name") User Name
+            br 
+            input.form-control(type="text", id="user_name")
             br
-            input(type="text", id="city")
-          .state
-            label(for="state") State
+            label(for="email") Email
             br
-            input(type="text", id="state")
-        label(for="Country") Country
-        br
-        input(type="text", id="country")
-        br
-        button
-        .password_container
-          label(for="password") Password
-          br
-          input(type="password", id="password")
-          br
-          label(for="passconfirm") Password Confirmation
-          br
-          input(type="password", id="passconfirm")
-          br
-          button
-  //- button.default-button
-  //- Non-disabled Button
+            input.form-control(type="email", id="email")
+            br
+            .row
+              .city.col-md-6
+                label(for="city") City
+                br
+                input.form-control(type="text", id="city")
+              .state.col-md-6
+                label(for="state") State
+                br
+                input.form-control(type="text", id="state")
+            label(for="Country") Country
+            br
+            input.form-control(type="text", id="country")
+            br
+            .text-center
+              button SAVE PROFILE
+            .password_container
+              label(for="password") Password
+              br
+              input.form-control(type="password", id="password")
+              br
+              label(for="passconfirm") Password Confirmation
+              br
+              input.form-control(type="password", id="passconfirm")
+              br
+              .text-center
+                button CHANGE PASSWORD
+        //- button.default-button
+      //- Non-disabled Button
 
   //- button.default-button(disabled="true").
   //- Disabled Button
