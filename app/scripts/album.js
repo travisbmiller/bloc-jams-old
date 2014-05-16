@@ -122,6 +122,11 @@ if (document.URL.match(/\/album/)) {
        
     );
 
+    $('button').click(function(){
+      
+      $('.col-md-7').append("HELLO")
+    })
+    
 
   });
 }
