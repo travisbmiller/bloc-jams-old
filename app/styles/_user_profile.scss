@@ -1,3 +1,7 @@
+.personal {
+  margin-top: 75px;
+}
+
 button {
   padding: 10px 20px;
   background: #D2287B;
@@ -15,11 +19,17 @@ button {
   &.not_active {
     background: #310F59;
   }
-  &.active {
+  &:active {
+    border: none;
+  }
+  &.on {
     border-radius: 1px;
   }
 }
 
+.active:active {
+  border: none;
+}
 
 
 h1 {
@@ -51,17 +61,41 @@ h1 {
   .upload {
     margin-left: auto;
     margin-right: auto;
+    display: block;
   }
 }
-
 
 
 label {
   @include font-open-sans(300);
   font-size: 16px;
-
 }
 
 .account_subs {
   margin: 40px 0 40px 0;
 }
+
+.end_content {
+  margin-top: 45px;
+}
+
+.card_table {
+  width: 100%;
+}
+
+.card_info {
+  border-top: 1px solid #fff;
+  td {
+    padding: 10px 0 10px 0;
+  }
+}
+
+.icon.i {
+      color: red;
+    }
+
+.visa_btn_container {
+  margin-top: 35px;
+  margin-bottom: 50px;
+}
+

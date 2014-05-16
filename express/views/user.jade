@@ -2,59 +2,60 @@ extends layouts/player_layout
 
 block content
   .container
-    .row
-      .col-md-3.personal
-        .personal_thumbnail
-          h1 Personal Information
-          .img_container
-            img(src="/images/user-upload-placeholder.png") 
-            button.upload UPLOAD
-      .col-md-7
-        .text-center.account_subs
-            ul.pagination
-              li 
-                button.active YOUR ACCOUNT
-              li
-                button.not_active SUBSCRIPTION
-            //- button YOUR ACCOUNT 
-            //- button SUBSCRIPTION
-        form(role="form")
-          .form-group
-            label(for="user_name") User Name
-            br 
-            input.form-control(type="text", id="user_name")
-            br
-            label(for="email") Email
-            br
-            input.form-control(type="email", id="email")
-            br
-            .row
-              .city.col-md-6
-                label(for="city") City
-                br
-                input.form-control(type="text", id="city")
-              .state.col-md-6
-                label(for="state") State
-                br
-                input.form-control(type="text", id="state")
-            label(for="Country") Country
-            br
-            input.form-control(type="text", id="country")
-            br
-            .text-center
-              button SAVE PROFILE
-            .password_container
-              label(for="password") Password
+     .user_container 
+      .row.main_container
+        .col-md-3.personal
+          .personal_thumbnail
+            h1 Personal Information
+            .img_container
+              img(src="/images/user-upload-placeholder.png") 
+              button.upload UPLOAD
+        .col-md-7
+          .text-center.account_subs
+              ul.pagination
+                li 
+                  button.account.not_active YOUR ACCOUNT
+                li
+                  button.subscription SUBSCRIPTION
+              //- button YOUR ACCOUNT 
+              //- button SUBSCRIPTION
+          form(role="form")
+            .form-group
+              label(for="user_name") User Name
+              br 
+              input.form-control(type="text", id="user_name")
               br
-              input.form-control(type="password", id="password")
+              label(for="email") Email
               br
-              label(for="passconfirm") Password Confirmation
+              input.form-control(type="email", id="email")
               br
-              input.form-control(type="password", id="passconfirm")
+              .row
+                .city.col-md-6
+                  label(for="city") City
+                  br
+                  input.form-control(type="text", id="city")
+                .state.col-md-6
+                  label(for="state") State
+                  br
+                  input.form-control(type="text", id="state")
+              label(for="Country") Country
+              br
+              input.form-control(type="text", id="country")
               br
               .text-center
-                button CHANGE PASSWORD
-        //- button.default-button
+                button SAVE PROFILE
+              .password_container
+                label(for="password") Password
+                br
+                input.form-control(type="password", id="password")
+                br
+                label(for="passconfirm") Password Confirmation
+                br
+                input.form-control(type="password", id="passconfirm")
+                br
+                .text-center
+                  button CHANGE PASSWORD
+          //- button.default-button
       //- Non-disabled Button
 
   //- button.default-button(disabled="true").

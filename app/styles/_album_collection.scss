@@ -39,7 +39,7 @@
   top: 0px;
   left: 0px;
   width: 100%;
-  height: 100%;
+  height: 165px;
   background-color: rgba(0, 0, 0, .4);
   z-index: 10;
 }
@@ -79,12 +79,16 @@
     cursor: pointer;
     color: white;
     background-color: $button-pink;
+    i {
+      color: #fff;
+    }
   }
 
   // Make the icons centered vertically.
   //  - This trick only works for text that doesn't span two lines.
   i {
     line-height: $overlay-button-size;
+    color: red;
   }
   // Add padding to the button to make it look visually centered.
   .fa-play {
